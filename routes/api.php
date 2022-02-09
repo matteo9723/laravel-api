@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('prova', function(){
+
+    $data = [  
+        "name"=>"Ugo",
+        "lastname"=>"De Ughi"
+    ];
+    return response()->json($data);
 });
+
+
+
+Route::get('posts', 'Api\PostController@index' );
